@@ -1,0 +1,54 @@
+<?php
+spl_autoload_register('Autoloader::autoloadDto');
+spl_autoload_register('Autoloader::autoloadDao');
+spl_autoload_register('Autoloader::autoloadLib');
+spl_autoload_register('Autoloader::autoloadTrait');
+spl_autoload_register('Autoloader::autoloadMail');
+
+class Autoloader{
+    
+    static function autoloadDto($class){
+        $file = 'modeles/dto/' . lcfirst($class) . '.php';
+        if(is_file($file)&& is_readable($file)){
+            require $file;
+        }
+      
+    }
+    
+    static function autoloadLib($class){
+        $file = 'lib/' . lcfirst($class) . '.php';
+        if(is_file($file)&& is_readable($file)){
+            require $file;
+        }
+        
+    }
+    
+    static function autoloadDao($class){
+        $file = 'modeles/dao/' . lcfirst($class) . '.php';
+        if(is_file($file)&& is_readable($file)){
+            require $file;
+        }
+        
+    }
+
+    static function autoloadTrait($class){
+        $file = 'modeles/traits/' . ucfirst($class) . '.php';
+        if(is_file($file)&& is_readable($file)){
+            require $file;
+        }
+        
+    }
+
+    static function autoloadMail($class){
+        $file = 'PHPMailer/_lib/class.' . $class . '.php';
+
+        if(is_file($file)&& is_readable($file)){
+            require $file;
+        }
+      
+    }
+    
+    
+}
+
+
