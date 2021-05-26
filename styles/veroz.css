@@ -130,7 +130,6 @@ footer {
 	box-shadow: 0px -3px 3px 0px #CCC;
 	background-color: #EDEDED;
 	color: #5E5D5D;
-	margin-top:10%;
 }
 
 footer .footerup {
@@ -335,6 +334,7 @@ footer .footerdown a {
 .mainAccueil #MidAccueil2
 {
 	box-shadow: 0 20px 0px 0px #CCC;
+	margin-bottom:10%;
 }
 
 /****************************************************************************************************************
@@ -781,6 +781,7 @@ div.connexion
 .fPage{
 	margin-left:40%;
 	margin-top:5%;
+	margin-bottom:5%;
 }
 
 
