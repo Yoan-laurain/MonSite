@@ -11,7 +11,7 @@ class dispatcher{
 		if (is_file("controleur/controleur" . ucfirst($unMenuP) . ".php")) {
 			return "controleur/controleur" . ucfirst($unMenuP) . ".php";
 		} else {
-			header('location: index.php?veroz=accueil');
+			header('location: index.php?IPSAD=accueil');
 		}
 	}
 }

@@ -3,7 +3,6 @@ spl_autoload_register('Autoloader::autoloadDto');
 spl_autoload_register('Autoloader::autoloadDao');
 spl_autoload_register('Autoloader::autoloadLib');
 spl_autoload_register('Autoloader::autoloadTrait');
-spl_autoload_register('Autoloader::autoloadMail');
 
 class Autoloader{
     
@@ -38,16 +37,6 @@ class Autoloader{
         }
         
     }
-
-    static function autoloadMail($class){
-        $file = 'PHPMailer/_lib/class.' . $class . '.php';
-
-        if(is_file($file)&& is_readable($file)){
-            require $file;
-        }
-      
-    }
-    
     
 }
 

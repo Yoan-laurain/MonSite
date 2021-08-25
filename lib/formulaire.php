@@ -101,18 +101,57 @@ class Formulaire{
 		$composant = "<a class = '" . $uneClass . "' id ='" . $unId . "' href='" . $uneDestination . "' target='" . $unTaget . "' onclick = '" . $onClick . "'>" . $unLabel . "</a>";
 		return $composant;
 	}
+
+	public function creerLabelLink2($uneClass, $unId, $uneDestination,  $unLabel, $unTaget = "", $onClick = "",$img=""){
+		$composant = "<a class = '" . $uneClass . "' id ='" . $unId . "' href='" . $uneDestination . "' target='" . $unTaget . "' onclick = '" . $onClick . "'>" . $unLabel ;
+		$composant .= "<img src=".$img." alt=''></a>";
+		return $composant;
+	}
+
+	public function creerFLechePrev($unId, $uneDestination){
+		$composant = "<a class = carousel-control-prev id ='" . $unId . "' href='" . $uneDestination."' role=button data-slide=prev>";
+		$composant .= "<span class=carousel-control-prev-icon aria-hidden=true></span><span class=sr-only>Previous</span></a>";
+		return $composant;
+	}
+
+
+	public function creerFLecheNext($unId, $uneDestination){
+		$composant = "<a class = carousel-control-next id ='" . $unId . "' href='" . $uneDestination."' role=button data-slide=next>";
+		$composant .= "<span class=carousel-control-next-icon aria-hidden=true></span><span class=sr-only>Next</span></a>";
+		return $composant;
+	}
 	// ##################################################################################################################
 	
 
 
 	// ##################################################################################################################
+
+	public function debutDivCarou($uneClass,$dataInterval,$id,$Aos){
+		$composant = "<div data-aos=".$Aos. " data-interval=".$dataInterval. " data-ride=carousel class='" . $uneClass . "' id='" . $id . "'>";
+		return $composant;
+	}
+		
+	public function debutDivAos($uneClass,$Aos){
+		$composant = "<div data-aos=".$Aos. " class='" . $uneClass . "' id='" . $uneClass . "'>";
+		return $composant;
+	}
+	
+	
+	
 	public function debutDiv($uneClass){
 		$composant = "<div class='" . $uneClass . "' id='" . $uneClass . "'>";
 		return $composant;
 	}
 
+	
+
 	public function finDiv(){
 		$composant = "</div>";
+		return $composant;
+	}
+
+	public function debutDivCaptcha($uneClass,$data){
+		$composant = "<div class='" . $uneClass . "' id='" . $uneClass . "' data-sitekey='". $data."'>";
 		return $composant;
 	}
 
@@ -303,13 +342,22 @@ class Formulaire{
 		$composant .= "/> ";
 		return $composant;
 	}
+	public function creerInputSubmit2($Class,$unNom, $unId, $uneValue, $onClick = ""){
+		$composant = "<input class =".$Class." type = 'submit' name = '" . $unNom . "' id = '" . $unId . "' ";
+		$composant .= "value = \"" . $uneValue . "\"";
+		if ($onClick != "") {
+			$composant .= " onclick='" . $onClick . "'";
+		}
+		
+		$composant .= "/> ";
+		return $composant;
+	}
 
 	public function creerInputImage($unNom, $unId, $uneSource){
 		$composant = "<input type = 'image' name = '" . $unNom . "' id = '" . $unId . "' ";
 		$composant .= "src = '" . $uneSource . "'/> ";
 		return $composant;
 	}
-
 
 	// ##################################################################################################################
 
@@ -321,7 +369,7 @@ class Formulaire{
 		foreach ($options as $option){
 			$composant .= "<option value = '" . $option . "'";
 			if ($option == $selected) {
-				$composant .= " selected";
+				$composant .= " selected disabled";
 			}
 			$composant .= ">" . $option . "</option>";
 		}

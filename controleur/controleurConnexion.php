@@ -12,8 +12,7 @@ $topConnexion = new Formulaire('post', 'index.php', 'ftopConnexion', 'ftopConnex
 $topConnexion->ajouterComposantLigne($topConnexion->debutDiv("topConnexion"));
     $topConnexion->ajouterComposantLigne($topConnexion->debutDiv("topConnexion2"));
         $topConnexion->ajouterComposantLigne($topConnexion->creerTitre("CONNEXION"));
-        $topConnexion->ajouterComposantLigne($topConnexion->creerTitre("Espace de réservé au developpeur de l'application", 2));
-    $topConnexion->ajouterComposantLigne($topConnexion->finDiv());
+   $topConnexion->ajouterComposantLigne($topConnexion->finDiv());
     
 $topConnexion->ajouterComposantLigne($topConnexion->finDiv());
 $topConnexion->ajouterComposantTab();

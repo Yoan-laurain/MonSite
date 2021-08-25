@@ -3,7 +3,7 @@
 
 class Security {
 
-	public static function genererSel($nbLetters){
+	public static function genererRandom($nbLetters){
 		$randString = "";
 		$charUniverse = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\\=";
 
