@@ -36,13 +36,21 @@ $menuNav = new Menu("veroz");
 
 if (isset($_SESSION['identification']) && ($_SESSION['identification'])) //Si il est authentifi� //
 {
-	$menuNav->ajouterComposant($menuNav->creerItemLien("accueil", "ACCUEIL",FALSE,FALSE));
-	$menuNav->ajouterComposant($menuNav->creerItemLien("connexion", "",FALSE,FALSE));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("accueil", "ACCUEIL"));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("veilleModif", "VEILLEM"));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("parcoursModif", "PARCOURSM"));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("projetsModif", "PROJETSM"));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("connexion", ""));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("contact", ""));
 }
 else
 {
-	$menuNav->ajouterComposant($menuNav->creerItemLien("accueil", "ACCUEIL",FALSE,FALSE));
-	$menuNav->ajouterComposant($menuNav->creerItemLien("connexion", "",FALSE,FALSE));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("accueil", "ACCUEIL"));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("veille", "MA VEILLE"));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("parcours", "MON PARCOURS"));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("projets", "MES PROJETS"));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("connexion", ""));
+	$menuNav->ajouterComposant($menuNav->creerItemLien("contact", ""));
 }
 
 $menuNav->creerMenu($_SESSION['veroz'], 'veroz');
