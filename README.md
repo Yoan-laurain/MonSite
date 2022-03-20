@@ -1,4 +1,4 @@
 # MonSite
 Mon site/CV
 
-Disponible à l'adresse : https://verozgames.github.io/MonSite/
+Ne peut être déployé à cause du php.
